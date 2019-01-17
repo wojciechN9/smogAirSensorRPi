@@ -41,13 +41,13 @@ function setLegend() {
 }
 
 function setLastHourValues(last_datum){
-	document.getElementById('pm25LastHour').innerHTML = getHourAndMinute(new Date(last_datum.Execution_timestamp));
+	document.getElementById('pm25LastHour').innerHTML = getHourAndMinute(last_datum.Execution_timestamp);
 	document.getElementById('pm25SmogLevel').innerHTML = last_datum.Pm25_value + " μg/m3";
 	var pm25AirQuality = document.getElementById('pm25AirQuality');
 	pm25AirQuality.innerHTML = set_pm25_air_quality(last_datum.Pm25_value);
 	$(pm25AirQuality).css('color', set_pm25_chart_colors([last_datum.Pm25_value])[0]);
 	
-	document.getElementById('pm10LastHour').innerHTML = getHourAndMinute(new Date(last_datum.Execution_timestamp));
+	document.getElementById('pm10LastHour').innerHTML = getHourAndMinute(last_datum.Execution_timestamp);
 	document.getElementById('pm10SmogLevel').innerHTML = last_datum.Pm10_value + " μg/m3";
 	var pm10AirQuality = document.getElementById('pm10AirQuality');
 	pm10AirQuality.innerHTML = set_pm10_air_quality(last_datum.Pm10_value);
@@ -136,9 +136,15 @@ function set_pm10_chart_colors(pm10_values){
 }
 
 function getHourAndMinute(date){
-	hour = date.getHours();
-	minute = (date.getMinutes()<10?'0':'') + date.getMinutes();
+	var formattedDate = splitDateForIOS(date);
+	hour = formattedDate.getHours();
+	minute = (formattedDate.getMinutes()<10?'0':'') + formattedDate.getMinutes();
 	return hour + ':' + minute;
+}
+
+function splitDateForIOS(date) {
+	var arr = date.split(/[- :]/);
+    return new Date(arr[0], arr[1]-1, arr[2], arr[3], arr[4], arr[5]);
 }
 
 function createCharts(chartsData){
@@ -160,7 +166,7 @@ function createCharts(chartsData){
 				borderWidth: 1,
 				backgroundColor: set_pm25_chart_colors(pm25_values)
 			}],
-			labels: chartsData.map(x => getHourAndMinute(new Date(x.Execution_timestamp)))
+			labels: chartsData.map(x => getHourAndMinute(x.Execution_timestamp))
 
 		},
 		options: {
@@ -223,7 +229,7 @@ function createCharts(chartsData){
 				borderWidth: 1,
 				backgroundColor: set_pm10_chart_colors(pm10_values)
 			}],
-			labels: chartsData.map(x => getHourAndMinute(new Date(x.Execution_timestamp)))
+			labels: chartsData.map(x => getHourAndMinute(x.Execution_timestamp))
 
 		},
 		options: {
