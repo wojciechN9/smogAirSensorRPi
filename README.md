@@ -15,8 +15,12 @@ First app on the Rpi is recieving data from PM3003 and save results to local db 
 
 The second app is starting working every full hour. Gets data from local db which was got from PM3003 from last hour and counting artithmetic mean. After that counted mean is exported to server db.
 
-The last one two apps are placed on server. First of them is webservice which fetching data from server db and provides url to bunch of this data converted to JSON.
+The last two apps are placed on server. First of them is webservice which fetching data from server db and provides url to bunch of this data converted to JSON.
 
+![alt text](https://github.com/wojciechN9/smogAirSensorRPi/blob/master/imgs/DSC_0672.JPG)
+Air quality sensor
 
+![alt text](https://github.com/wojciechN9/smogAirSensorRPi/blob/master/imgs/DSC_0679.JPG)
+Connection to RPi 3
 
 Feel free to use my code :)
