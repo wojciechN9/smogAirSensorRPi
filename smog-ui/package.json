@@ -1,0 +1,24 @@
+{
+  "name": "smog-ui",
+  "version": "1.0.0",
+  "description": "measurement of smog in michow city",
+  "main": "smog.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "smog",
+    "czujnik",
+    "smogu",
+    "pomiar",
+    "stezenie"
+  ],
+  "author": "wn",
+  "license": "ISC",
+  "dependencies": {
+    "chart.js": "^2.7.3",
+    "chartjs-plugin-annotation": "^0.5.7",
+    "express": "^4.16.4",
+    "path": "^0.12.7"
+  }
+}

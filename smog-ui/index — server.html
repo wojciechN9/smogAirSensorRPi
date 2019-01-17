@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pl" class="h-100">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	
+	<link rel="stylesheet" type="text/css" href="public/css/smog.css">
+    <title>SMOK</title>
+  </head>
+  <body class="container-fluid d-flex h-100 flex-column">
+	<main role="main">
+		<div class="container">
+		<h1 class="title">Poziom smogu w Michowie</h1>
+		  <div class="row justify-content-center">
+			<div class="col-12 col-md-6 mb-3">
+			  <h5>Wykres PM 2.5</h5>
+			  <div><span class="state-info">Stan na godzine: </span><span id="pm25LastHour"></span></div>
+			  <div><span class="state-info">Stężenie: </span> <span id="pm25SmogLevel"></span></div>
+			  <div><span class="state-info">Stan powietrza: </span> <span id="pm25AirQuality" class="text-uppercase"></span></div>
+			  <canvas id="pm25Chart"></canvas>	  
+			</div>
+			<div class="col-12 col-md-6">
+			  <h5>Wykres PM 10</h5>
+			  <div><span class="state-info">Stan na godzine: </span><span id="pm10LastHour"></span></div>
+			  <div><span class="state-info">Stężenie: </span> <span id="pm10SmogLevel"></span></div>
+			  <div><span class="state-info">Stan powietrza: </span> <span id="pm10AirQuality" class="text-uppercase"></span></div>
+			  <canvas id="pm10Chart"></canvas>			  
+			</div>
+		  </div>
+		  <div class="row justify-content-center mt-5">
+			<div class="col-12 col-lg-6 mb-3">
+			  <h5>Historia dla PM 2.5</h5>
+			  <table class="table table-striped table-hover">
+				<thead>
+				 <tr>
+				  <th>Godzina</th>
+				  <th>Stężenie</th>
+				  <th>Stan</th>
+				 </tr>
+				</thead>
+				<tbody>
+					<tr>
+					 <td>2018-24-12 21:00</td>
+					 <td>500</td>
+					 <td>ALARMOWY</td>
+					</tr>
+					<tr>
+					 <td>2018-24-12 21:00</td>
+					 <td>500</td>
+					 <td>ALARMOWY</td>
+					</tr>
+					<tr>
+					 <td>2018-24-12 21:00</td>
+					 <td>500</td>
+					 <td>ALARMOWY</td>
+					</tr>
+					<tr>
+					 <td>2018-24-12 20:00</td>
+					 <td>500</td>
+					 <td>ALARMOWY</td>
+					</tr>
+					<tr>
+					 <td>2018-24-12 20:00</td>
+					 <td>500</td>
+					 <td>ALARMOWY</td>
+					</tr>
+				</tbody>
+			  </table>
+			</div>
+			<div class="col-12 col-lg-6">
+			  <h5>Historia dla PM 10</h5>
+			<table class="table table-striped table-hover">
+				<thead>
+				 <tr>
+				  <th>Godzina</th>
+				  <th>Stężenie</th>
+				  <th>Stan</th>
+				 </tr>
+				</thead>
+				<tbody>
+					<tr>
+					 <td>2018-24-12 21:00</td>
+					 <td>500</td>
+					 <td>ALARMOWY</td>
+					</tr>
+					<tr>
+					 <td>2018-24-12 21:00</td>
+					 <td>500</td>
+					 <td>ALARMOWY</td>
+					</tr>
+					<tr>
+					 <td>2018-24-12 21:00</td>
+					 <td>500</td>
+					 <td>ALARMOWY</td>
+					</tr>
+					<tr>
+					 <td>2018-24-12 21:00</td>
+					 <td>500</td>
+					 <td>ALARMOWY</td>
+					</tr>
+					<tr>
+					 <td>2018-24-12 21:00</td>
+					 <td>500</td>
+					 <td>ALARMOWY</td>
+					</tr>
+				</tbody>
+			  </table>
+			</div>
+		  </div>
+		</div>
+	</main>
+	<footer class="footer mt-auto py-3">
+		<div class="container text-center">
+			<a href="howTo">How I've made it</a>
+		</div>
+	</footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.com/libraries/Chart.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.min.js"></script>
+	<!--page js files -->
+	<!-- <script src="public/scripts/Chart.min.js"></script> -->
+	<script src="public/scripts/chartjs-plugin-annotation.min.js"></script>
+	<script src="public/scripts/smog.js"></script>
+  </body>
+  
+</html>
