@@ -11,6 +11,10 @@
 	.ad-mobile {
 		display: none;
 	}
+	
+	.ad-desktop {
+		min-width: 750px;
+	}
 }
 
 .footer {
