@@ -4,7 +4,10 @@
 		margin-left: auto;
 		margin-right: auto;
 	}
-	
+
+	.ad-desktop {
+		display: none;
+	}
 }
 
 @media only screen and (min-width: 992px){
@@ -25,7 +28,6 @@
   line-height: 60px; /* Vertically center the text there */
   background-color: #f5f5f5;
 }
-
 
 .title{
 	min-height: 100px;

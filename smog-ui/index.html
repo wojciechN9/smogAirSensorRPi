@@ -35,23 +35,10 @@
 					  <div><span class="state-info">Stan powietrza: </span> <span id="pm25AirQuality" class="text-uppercase"></span></div>
 					  <canvas id="pm25Chart"></canvas>	  
 					</div>
-					<!-- ceneo ad -->
-					<div class="ad-mobile" style="margin-left: auto; margin-right: auto;">
-						<a href="https://www.ceneo.pl/Sukienki#pid=19055&crid=238618&cid=32337" rel="nofollow"><img alt="Sukienki - porównaj na Ceneo.pl" src="https://image2.ceneo.pl/data/banners/banner_2923.jpg"></img></a>
-					</div>
-					<div class="col-lg-6">
-					  <h5>Wykres PM 10</h5>
-					  <div><span class="state-info">Stan na godzine: </span><span id="pm10LastHour"></span></div>
-					  <div><span class="state-info">Stężenie: </span> <span id="pm10SmogLevel"></span></div>
-					  <div><span class="state-info">Stan powietrza: </span> <span id="pm10AirQuality" class="text-uppercase"></span></div>
-					  <canvas id="pm10Chart"></canvas>			  
-					</div>
-				</div>
-				<div class="row justify-content-center" >
-				<!-- ceneo ad -->
-				<div class="ad-desktop">
-					<div id="ceneoaffcontainer238615" ></div>
-						<a id="ceneoaff-logo" title="Ceneo.pl" style="max-height: 150px" href="https://www.ceneo.pl/#pid=19055&crid=238615&cid=32337" rel="nofollow"><img style="border:0;width:1px;height:1px;" src="//app.ceneostatic.pl/common/image/logo/ap-logo-transparent-small.png" alt="Ceneo.pl" /></a>
+					<!-- ceneo ad mobile-->
+					<div class="ad-mobile">
+						<div id="ceneoaffcontainer240254"></div>
+						<a id="ceneoaff-logo" title="Ceneo.pl" href="https://www.ceneo.pl/#pid=19055&crid=240254&cid=32337" rel="nofollow"><img style="border:0;width:1px;height:1px;" src="//app.ceneostatic.pl/common/image/logo/ap-logo-transparent-small.png" alt="Ceneo.pl" /></a>
 						<script type="text/javascript" charset="utf-8">
 							if (typeof CeneoAPOptions == "undefined" || CeneoAPOptions == null)
 							{
@@ -66,7 +53,7 @@
 							}
 							CeneoAPOptions[CeneoAPOptions.length] =
 							{
-								ad_creation: 238615,
+								ad_creation: 240254,
 								ad_channel: 32337,
 								ad_partner: 19055,
 								ad_type: 1,
@@ -74,7 +61,7 @@
 								ad_format: 3,
 								ad_newpage: false,
 								ad_basket: false,
-								ad_container: 'ceneoaffcontainer238615',
+								ad_container: 'ceneoaffcontainer240254',
 								ad_formatTypeId: 1,
 								ad_contextual: false, 
 								ad_recommended: true, 
@@ -82,6 +69,53 @@
 							};
 						</script>
 					</div>
+					<div class="col-lg-6">
+					  <h5>Wykres PM 10</h5>
+					  <div><span class="state-info">Stan na godzine: </span><span id="pm10LastHour"></span></div>
+					  <div><span class="state-info">Stężenie: </span> <span id="pm10SmogLevel"></span></div>
+					  <div><span class="state-info">Stan powietrza: </span> <span id="pm10AirQuality" class="text-uppercase"></span></div>
+					  <canvas id="pm10Chart"></canvas>			  
+					</div>
+				</div>				
+				<div class="row justify-content-center">
+				<!-- ceneo ad desktop-->
+				<div class="ad-desktop">
+					<div id="ceneoaffcontainer238615" style="min-height: 150px"></div>
+					<a id="ceneoaff-logo" title="Ceneo.pl"  href="https://www.ceneo.pl/#pid=19055&crid=238615&cid=32337" rel="nofollow"><img style="border:0;width:1px;height:1px;" src="//app.ceneostatic.pl/common/image/logo/ap-logo-transparent-small.png" alt="Ceneo.pl" /></a>
+					<script type="text/javascript" charset="utf-8">
+						if (typeof CeneoAPOptions == "undefined" || CeneoAPOptions == null)
+						{
+						var CeneoAPOptions = new Array(); 
+						stamp = parseInt(new Date().getTime()/86400, 10);
+						var script = document.createElement("script");
+						script.setAttribute("type", "text/javascript");
+						script.setAttribute("src", "//partnerzyapi.ceneo.pl/External/ap.js?"+stamp);
+						script.setAttribute("charset", "utf-8");
+						var head = document.getElementsByTagName("head")[0];
+						head.appendChild(script);
+						}
+						CeneoAPOptions[CeneoAPOptions.length] =
+						{
+							ad_creation: 238615,
+							ad_channel: 32337,
+							ad_partner: 19055,
+							ad_type: 1,
+							ad_content: '299,463,540,909,1066,1067,1186,1201,1274,1389,1465,1499,1587,1755,1766,2904,3226,4266',
+							ad_format: 3,
+							ad_newpage: false,
+							ad_basket: false,
+							ad_container: 'ceneoaffcontainer238615',
+							ad_formatTypeId: 1,
+							ad_contextual: false, 
+							ad_recommended: true, 
+							ad_showRank: false 
+						};
+					</script>
+				</div>
+				<!-- ceneo ad mobile-->
+				<div class="ad-mobile" style="margin-left: auto; margin-right: auto;">
+					<a href="https://www.ceneo.pl/Sukienki#pid=19055&crid=238618&cid=32337" rel="nofollow"><img alt="Sukienki - porównaj na Ceneo.pl" src="https://image2.ceneo.pl/data/banners/banner_2923.jpg"></img></a>
+				</div>
 				</div>
 			</div>
 			<div class="col-lg-2">
@@ -139,7 +173,8 @@
 			<span class="dot dot-orange"></span> 
 			<span><a href="https://github.com/wojciechN9/smogAirSensorRPi"> Jak to działa</a></span>
 		</div>
-	</footer>	
+	</footer>
+	
 	<section id="cookie-warn">
 		<p><strong>UWAGA!</strong> Niniejsza strona wykorzystuje pliki cookies. 
 		Pozostając na stronie godzisz się na ich zapisywanie w Twojej przeglądarce. 
@@ -157,7 +192,7 @@
 	<script src="scripts/Chart.min.js"></script>
 	<script src="scripts/chartjs-plugin-annotation.min.js"></script>
 	<script src="scripts/smog.js"></script>
-	<script type="text/javascript" src="scripts/cookie.js"></script>
+	<script src="scripts/cookie.js"></script>
   </body>
   
 </html>
