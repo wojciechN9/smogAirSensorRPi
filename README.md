@@ -1,7 +1,10 @@
 # smogAirSensorRPi
 Fetching data from air quality sensor and present this data on the web page
 
-Working project is available: http://szpek.pl
+**This is a prototype created on the Raspberry Pi. The complete version is based on microcontrollers.**
+
+* Main project: [Szpek APP](https://github.com/wojciechN9/Szpek)
+* Website: http://szpek.pl
 
 # Requirements
   - Raspberry PI with network connection
